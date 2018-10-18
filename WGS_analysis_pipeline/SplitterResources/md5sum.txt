@@ -1,0 +1,9 @@
+85d2ab8f78bf900d5936fa5b9c8aeb21  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_1_failed_filter.fastq.gz
+f6805ee8e0ba07f15c95426547913acd  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_1_passed_filter.fastq.gz
+4dd94ed11c3d46848b7a91a82fcaef22  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_1_phix_filter.fastq.gz
+fa4cd92cd7c2b3daf64de905e487edd1  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_2_Index_Read_failed_filter.fastq.gz
+8b5b5cc3fe3867808aaf164a3159cc97  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_2_Index_Read_passed_filter.fastq.gz
+cf655f7a40fc4b461be84a5eb689c67e  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_2_Index_Read_phix_filter.fastq.gz
+9361eaf301f3cbec4fe28637045c8006  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_3_Index_Read_failed_filter.fastq.gz
+4d55208f93d0d441858e5e83246544e0  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_3_Index_Read_passed_filter.fastq.gz
+8b78c648280221c5bd8c97ca56d74c42  Merge-sample-YPDH4k-from-flowcell-H75MGBCXY-on-2017-03-20_Read_3_Index_Read_phix_filter.fastq.gz
