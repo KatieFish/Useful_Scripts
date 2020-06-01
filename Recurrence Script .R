@@ -1,14 +1,32 @@
 #KJF 3/31/20
 #script calculates the probability of any given gene or intergenic region being mutated 
 #n times, controlling for gene size. W303_Position_File.txt is required
-#Input data should be in the form of a data frame with 2 columns. Ex. 
-#Dataset  #Chromosome #Position
-
+#Input data should be a dataframe that can have any additional info but MUST 
+#contain two columns for Chromosome and Postion that are named as such
+#Chromosome #Position
+#chrI       4532
+#chrII      42343
 
 #upon annotating intergenic mutations, ORF position file can be replaced with position file
 
 Calculate_Recurrence_Probability <- function (Observed_Data, W303_Position_File){
+  
+  #boolean user-supplied values
+  mito<- as.logical(readline(prompt="Include Mito? (TRUE/FALSE): "))
+  intergenic<- as.logical(readline(prompt="Include Intergenic? (TRUE/FALSE): "))
+  tRNA<- as.logical(readline(prompt="Include tRNAs? (TRUE/FALSE): "))
+  
   refdf<- W303_Position_File
+  #
+  if(!mito){
+    refdf<-refdf[-which(refdf$Chromosome=="chrMito"), ]
+  }
+  if(!intergenic){
+    refdf<-refdf[-which(is.na(refdf$Direction)), ]
+  }
+  if(!tRNA){
+    refdf<-refdf[-which(grepl("t", substr(refdf$Feature,1,1))), ]
+  }
   refdf$FeatureID<-c(1:nrow(refdf))
   Observed_Data->df
   df$Feature<-NA
@@ -38,6 +56,7 @@ df<-unique(df)
 # add an empty column to observed counts dataframe to hold lambda
 df$Lambda<-(df$Size/genome_size)*Nmutations 
 
+#unhash below to output logp along with bonferroni corrections
 df$"Psubn"<- ((((df$Lambda)^(df$n))/
   (factorial(df$n)))*exp(-(df$Lambda)))
 #df$"logP{n}"<- log10(df$`P{n}`)
