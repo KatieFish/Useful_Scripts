@@ -7,9 +7,7 @@
 #chrI       4532
 #chrII      42343
 
-#upon annotating intergenic mutations, ORF position file can be replaced with position file
-
-Calculate_Recurrence_Probability <- function (Observed_Data, W303_Position_File){
+Calculate_Recurrence_Probability <- function (Observed_Data,W303_Position_File){
   
   #boolean user-supplied values
   mito<- as.logical(readline(prompt="Include Mito? (TRUE/FALSE): "))
@@ -17,6 +15,7 @@ Calculate_Recurrence_Probability <- function (Observed_Data, W303_Position_File)
   tRNA<- as.logical(readline(prompt="Include tRNAs? (TRUE/FALSE): "))
   
   refdf<- W303_Position_File
+  refdf$Feature<-as.character(refdf$Feature)
   #
   if(!mito){
     refdf<-refdf[-which(refdf$Chromosome=="chrMito"), ]
