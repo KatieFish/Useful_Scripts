@@ -36,9 +36,16 @@ Calculate_Recurrence_Probability <- function (Observed_Data,W303_Position_File){
     refrow<-which(refdf$Chromosome == df$Chromosome[j] &
                                    refdf$Begin<= df$Position[j] &
                                    refdf$End >= df$Position[j])
+    if(length(refrow)>0){
     df$Feature[j]<-as.character(refdf$Feature[refrow])
     df$FeatureID[j]<-refdf$FeatureID[refrow]
     df$Size[j]<-refdf$Size[refrow]
+  }
+  else{
+    df$Feature[j]<-"no annotation in reference file"
+    df$FeatureID[j]<-NA
+    df$Size[j]<-NA
+  }
   }
 
 #calculate genome size 
